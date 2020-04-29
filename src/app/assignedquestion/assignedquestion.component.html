@@ -1,0 +1,42 @@
+
+
+<div class=jumbotron>
+
+  
+
+        <table>
+          <tr  *ngFor="let ques of arr;let i=index"  class="btn-group btn-group-justified">
+           <td>
+            <button   (click)="click(ques.questionId)" type="submit" class="btn btn-primary"> {{i+1}} </button> 
+           </td>
+          </tr>
+        </table>  
+ 
+<div *ngIf ="flag">
+        Question : {{currentQuestion.questionId}} &nbsp;
+        {{currentQuestion.questionTitle}}&nbsp;&nbsp;
+       Marks : {{currentQuestion.questionMark}} 
+       
+        <ul style="list-style-type:circle">
+       <li> 1:{{currentQuestion.questionOption1}} &nbsp;</li>
+      <li>  2:{{currentQuestion.questionOption2}} &nbsp;</li>
+       <li> 3:{{currentQuestion.questionOption3}} &nbsp;</li>
+        <li>4:{{currentQuestion.questionOption4}} &nbsp;</li>
+        </ul>
+       
+        <label for="ans">Choose Answer:</label>
+        <select [(ngModel)]="currentQuestion.choosenAnswer"  id="ans" name="ans" (click)=sendAnswer()  >
+         
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+       
+      </div>
+      <div >
+      <button   (click)="submit()" type="submit" class="btn btn-primary" > Submit Test </button>  
+    </div> 
+    </div>
+
+     

@@ -1,0 +1,74 @@
+
+
+<div class="jumbotron">
+    <form #examform="ngForm" novalidate>
+        <!-- <div class="form-group">
+            <label for="testid">Enter Test   Id </label>
+            <input [(ngModel)]="test.testId" type="number"  class="form-control" name="testid"  id="testid" >
+          </div>
+     -->
+          <div class="form-group">
+            <label for="examname">Enter Test Title</label>
+            <input [(ngModel)]="exam.examTitle" type="text"  class="form-control" name="examname"  id="examname" #examname="ngModel" required>
+            <div *ngIf="examname.invalid && (examname.dirty || examname.touched)"
+            class="alert alert-danger">
+ 
+             <div *ngIf="examname.errors.required">
+                 Test Name is required.
+             </div>
+             
+ 
+           </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="exammarks">Enter Test Marks </label>
+            <input [(ngModel)]="exam.examMarks" type="number"  class="form-control" name="exammarks"  id="examMarks" #exammarks="ngModel" required >
+            <div *ngIf="exammarks.invalid && (exammarks.dirty || exammarks.touched)"
+            class="alert alert-danger">
+ 
+             <div *ngIf="exammarks.errors.required">
+                 Test Marks is required.
+             </div>
+           </div>
+          </div>
+          <div class="form-group">
+            <label for="starttime">Start Time</label>
+            <input [(ngModel)]="exam.startTime" type="datetime"  class="form-control" name="starttime"  id="starttime" #starttime="ngModel" required >
+            <div *ngIf="starttime.invalid && (starttime.dirty || starttime.touched)"
+            class="alert alert-danger">
+ 
+             <div *ngIf="starttime.errors.required">
+                 Start time is required.
+             </div>
+           </div>
+          </div>
+          <div class="form-group">
+            <label for="endtime">End Time</label>
+            <input [(ngModel)]="exam.endTime" type="datetime"  class="form-control" name="endtime"  id="endtime"#endtime="ngModel" required >
+            <div *ngIf="endtime.invalid && (endtime.dirty || endtime.touched)"
+            class="alert alert-danger">
+ 
+             <div *ngIf="endtime.errors.required">
+                 End time is required.
+             </div>
+           </div>
+          </div>
+          <div class="form-group">
+            <label for="duration">Test Duration</label>
+            <input [(ngModel)]="exam.examDuration" type="text"  class="form-control" name="duration"  id="duration" #duration="ngModel" required>
+            <div *ngIf="duration.invalid && (duration.dirty || duration.touched)"
+            class="alert alert-danger">
+ 
+             <div *ngIf="duration.errors.required">
+                 Test duration is required.
+             </div>
+           </div>
+          </div>
+          
+
+          <button   (click)="updateExam()" [disabled]="!examform.form.valid" type="submit" class="btn btn-primary"> Update Test  </button>
+
+    </form>
+
+</div>

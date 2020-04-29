@@ -1,0 +1,42 @@
+
+
+<h1>Question Details</h1> 
+
+<hr/>
+<div *ngIf="question">
+  <div>
+    <label><b>Question Id :</b></label> {{question.questionId}}
+  </div>
+  <div>
+    <label><b>Question Title:</b></label> {{question.questionTitle}}
+  </div>
+<div>Question Option:</div> <br>
+  <div>
+    <label><b>1</b></label> {{question.questionOption1}}
+  </div>
+
+  <div>
+    <label><b>2</b></label> {{question.questionOption2}}
+  </div>
+
+  <div>
+    <label><b>3</b></label> {{question.questionOption3}}
+  </div>
+
+  <div>
+    <label><b>4</b></label> {{question.questionOption4}}
+  </div>
+
+  <div>
+    <label><b>Question Answer</b></label> {{question.questionAnswer}}
+  </div>
+
+  <div>
+    <label><b>question Marks :</b></label> {{question.questionMark}}
+  </div> 
+  
+</div>
+
+<br>
+<br>
+ <button (click)="list(question.exam.examId)" class="btn btn-primary">Back to Question List</button><br> 

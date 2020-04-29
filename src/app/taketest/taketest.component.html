@@ -1,0 +1,12 @@
+
+<div class=jumbotron>
+<form class='text-center'>
+    <div class="form-group">
+        <label for="userId">User Id</label>
+        <input [(ngModel)]="assignExam.user.userId" type="text"  class="form-control" name="userId"  id="userId" >
+      </div>
+  
+      <button   (click)="takeExam(assignExam.user.userId)" type="submit" class="btn btn-primary"> Take Test</button>
+
+</form>
+</div>

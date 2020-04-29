@@ -1,0 +1,26 @@
+
+<div>
+
+    <table class="table table-hover">
+
+        <tbody>
+
+            <tr>
+                <th>SNO</th>
+                <th>User</th>
+                <th>Test</th>
+                <th>Attempted</th>
+                <th>Marks</th>
+            </tr>
+            <tr *ngFor="let assignExam of assignExam;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{assignExam.user.userId}}</td>
+                <td>{{assignExam.test.examId}}</td>
+               <td>{{assignExam.status}}</td>
+               <td>{{assignExam.marksScored}}</td>
+                
+              </tr>
+              
+            </tbody>
+        </table>
+    </div>
