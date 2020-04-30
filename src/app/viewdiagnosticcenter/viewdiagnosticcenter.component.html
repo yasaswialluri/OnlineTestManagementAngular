@@ -1,0 +1,27 @@
+
+
+<div class = jumbotron>
+    <table class="table table-hover">
+        <tbody>
+
+            <tr>
+                <th>SNO</th>
+                <th>Center Id</th>
+                <th>Center Name</th>
+               
+            </tr>
+            <tr *ngFor="let c of center;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{c.centerId}}</td>
+                <td>{{c.centerName}}</td>
+            
+               
+                
+               <td><button (click)="showTest(c.centerId)" class="btn btn-danger">Show Test</button></td>
+               
+                  
+            </tr>
+              
+            </tbody>
+        </table>
+    </div>
